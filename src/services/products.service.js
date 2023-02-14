@@ -11,7 +11,16 @@ const findById = async (productsId) => {
   return products;
 };
 
+const insert = async (prods) => {
+  const newPro = await productsModel.insert(prods);
+  if (!prods) {
+  return { message: '"name" is required' };
+  }
+  return { id: newPro, name: prods.name };
+};
+
 module.exports = {
   findAll,
   findById,
+  insert,
 };

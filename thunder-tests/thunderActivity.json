@@ -1,0 +1,21 @@
+[
+  {
+    "_id": "1eda0d29-8421-4216-b8da-5bda19402356",
+    "colId": "history",
+    "containerId": "",
+    "name": "http:/localhost:3000/products",
+    "url": "http:/localhost:3000/products",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-02-14T00:57:59.376Z",
+    "modified": "2023-02-14T00:57:59.376Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"ProductX\"\n}",
+      "form": []
+    },
+    "tests": []
+  }
+]
