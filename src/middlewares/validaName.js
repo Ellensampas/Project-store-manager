@@ -11,6 +11,4 @@ const validaName = (req, res, next) => {
   next();
 };
 
-module.exports = {
-  validaName,
-};
+module.exports = validaName;

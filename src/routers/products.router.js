@@ -1,6 +1,6 @@
 const express = require('express');
 const productsController = require('../controllers/products.controller');
-const { validaName } = require('../middlewares/validaName');
+const validaName = require('../middlewares/validaName');
 
 const router = express.Router();
 
