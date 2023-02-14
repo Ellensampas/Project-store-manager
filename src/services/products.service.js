@@ -11,12 +11,13 @@ const findById = async (productsId) => {
   return products;
 };
 
-const insert = async (prods) => {
-  const newPro = await productsModel.insert(prods);
-  if (!prods) {
-  return { message: '"name" is required' };
-  }
-  return { id: newPro, name: prods.name };
+const insert = async (prod) => {
+  const newProd = await productsModel.insert(prod);
+  const res = {
+    id: newProd,
+    name: prod.name,
+  };
+  return res;
 };
 
 module.exports = {

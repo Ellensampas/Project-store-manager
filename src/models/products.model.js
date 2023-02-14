@@ -10,17 +10,18 @@ const findAll = async () => {
 
 const findById = async (productsId) => {
   const [products] = await connection.execute(
-    'SELECT * FROM StoreManager.products WHERE id = ?', [productsId],
+    'SELECT * FROM StoreManager.products WHERE id = ?',
+    [productsId],
   );
   return camelize(products[0]);
 };
 
-const insert = async (product) => {
+const insert = async (prod) => {
   const [{ insertId }] = await connection.execute(
-    'INSERT INTO StoreManager.products (name) VALUE (?)',
-    [product.name],
-  );
-    return insertId;
+    'INSERT INTO StoreManager.products (name) VALUES (?)',
+    [prod.name],
+    );
+  return insertId;
 };
 
 module.exports = {
