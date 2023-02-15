@@ -19,7 +19,6 @@ const listAll = async () => {
 
 const listAllId = async (saleId) => {
   const sale = await salesModel.listAllId(saleId);
-  console.log(sale);
   return sale;
 };
 

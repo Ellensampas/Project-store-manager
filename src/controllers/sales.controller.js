@@ -17,7 +17,6 @@ const listAllId = async (req, res) => {
   if (sales.length === 0 || !sales) {
     return res.status(404).json({ message: 'Sale not found' });
   }
-  console.log(sales);
   return res.status(200).json(sales);
 };
 

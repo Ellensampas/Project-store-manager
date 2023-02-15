@@ -20,8 +20,22 @@ const insert = async (prod) => {
   return res;
 };
 
+const attProd = async (name, id) => {
+  const newId = await productsModel.findById(id);
+  if (!newId) {
+    return { message: 'Product not found' };
+  }
+  await productsModel.attProd(name, id);
+  const res = {
+    id,
+    name,
+  };
+  return res;
+};
+
 module.exports = {
   findAll,
   findById,
   insert,
+  attProd,
 };

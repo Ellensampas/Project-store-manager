@@ -20,8 +20,20 @@ const insertProd = async (req, res) => {
   res.status(201).json(newP);
 };
 
+const attProd = async (req, res) => {
+  const { name } = req.body;
+  const { id } = req.params;
+  const newP = await productsService.attProd(name, id);
+  
+  if (newP.message) {
+    return res.status(404).json({ message: 'Product not found' });
+  }
+  return res.status(200).json({ id, name });
+};
+
 module.exports = {
   listAllProducts,
   getProductsId,
   insertProd,
+  attProd,
 };
