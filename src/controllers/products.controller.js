@@ -31,9 +31,19 @@ const attProd = async (req, res) => {
   return res.status(200).json({ id, name });
 };
 
+const delProd = async (req, res) => {
+  const { id } = req.params;
+  const del = await productsService.delProd(id);
+  if (del.message) {
+    return res.status(404).json({ message: 'Product not found' });
+  }
+  return res.status(204).json();
+};
+
 module.exports = {
   listAllProducts,
   getProductsId,
   insertProd,
   attProd,
+  delProd,
 };

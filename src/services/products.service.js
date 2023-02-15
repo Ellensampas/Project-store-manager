@@ -33,9 +33,19 @@ const attProd = async (name, id) => {
   return res;
 };
 
+const delProd = async (id) => {
+  const newId = await productsModel.findById(id);
+  if (!newId) {
+    return { message: 'Product not found' };
+  }
+  const del = await productsModel.delProd(id);
+  return del;
+};
+
 module.exports = {
   findAll,
   findById,
   insert,
   attProd,
+  delProd,
 };

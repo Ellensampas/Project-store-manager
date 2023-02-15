@@ -32,9 +32,18 @@ const attProd = async (name, id) => {
   return product;
 };
 
+const delProd = async (id) => {
+  const [product] = await connection.execute(
+    'DELETE FROM StoreManager.products WHERE id = ?;',
+    [id],
+  );
+  return product;
+};
+
 module.exports = {
   findAll,
   findById,
   insert,
   attProd,
+  delProd,
 };
