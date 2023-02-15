@@ -17,5 +17,7 @@ router.post(
   validaProdInex,
   salesController.insertNew,
 );
+router.get('/', salesController.listAll);
+router.get('/:id', salesController.listAllId);
 
 module.exports = router;

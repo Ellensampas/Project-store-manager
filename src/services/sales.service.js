@@ -12,6 +12,19 @@ const insertAll = async (saleProd) => {
   };
 };
 
+const listAll = async () => {
+  const sales = await salesModel.listAll();
+  return sales;
+};
+
+const listAllId = async (saleId) => {
+  const sale = await salesModel.listAllId(saleId);
+  console.log(sale);
+  return sale;
+};
+
 module.exports = {
   insertAll,
+  listAll,
+  listAllId,
 };
