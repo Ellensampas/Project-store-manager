@@ -28,7 +28,7 @@ const attProd = async (req, res) => {
   if (newP.message) {
     return res.status(404).json({ message: 'Product not found' });
   }
-  return res.status(200).json({ id, name });
+  return res.status(200).json(newP);
 };
 
 const delProd = async (req, res) => {

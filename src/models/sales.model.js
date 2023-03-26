@@ -9,7 +9,7 @@ const insertNew = async () => {
 
 const insertDetails = async (saleId, productId, quant) => {
   const dat = await connection.execute(
-    'INSERT INTO StoreManager.sales_products (sale_id, product_id, quantity) VALUES(?, ?, ?)',
+    'INSERT INTO StoreManager.sales_products (sale_id, product_id, quantity) VALUES (?, ?, ?)',
     [saleId, productId, quant],
   );
   return dat;

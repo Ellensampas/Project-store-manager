@@ -15,7 +15,7 @@ const validaProduct = (req, res, next) => {
 
 const validaQuant = (req, res, next) => {
   const quant = req.body;
-
+    
   const productMap = quant.map((produc) => produc.quantity);
 
   const valida = productMap.some((produc) => produc === undefined);
@@ -25,6 +25,7 @@ const validaQuant = (req, res, next) => {
   }
   next();
 };
+
 const validaQuantNum = (req, res, next) => {
   const quant = req.body;
 
@@ -42,7 +43,7 @@ const validaQuantNum = (req, res, next) => {
 
 const validaProdInex = async (req, res, next) => {
   const productId = req.body;
-
+  
   const rest = await productsModel.findAll();
 
   const productMap = productId.map((produc) => produc.productId);
@@ -58,4 +59,9 @@ const validaProdInex = async (req, res, next) => {
   next();
 };
 
-module.exports = { validaProduct, validaQuant, validaQuantNum, validaProdInex };
+module.exports = {
+  validaProduct,
+  validaQuant,
+  validaQuantNum,
+  validaProdInex,
+};
